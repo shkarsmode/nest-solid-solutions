@@ -21,7 +21,7 @@ import { EnvConfig } from './shared/enums/EnvConfig.enum';
                 synchronize: true,
                 migrationsRun: false,
                 logging: true,
-                migrations: ["dist/**/db/migrations/*{.ts,.js}"]
+                migrations: ["dist/**/migrations/*{.ts,.js}"]
             }),
             inject: [ConfigService]
         }),
