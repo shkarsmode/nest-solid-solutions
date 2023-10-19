@@ -22,7 +22,7 @@ export class AuthController {
     @UseGuards(AuthGuard('refreshJwt'))
     @Put('refresh')
     public async refresh(@Request() req): Promise<IResponseAccessToken> {
-        const admin = await this.adminRepository.findOne(req.user.id);
+        const admin = await this.adminRepository.findOneBy({id: req.user.id});
         return this.authService.login(admin);
     }
 

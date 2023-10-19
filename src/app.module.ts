@@ -3,6 +3,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { AdminMenuModule } from './modules/admin-menu/admin-menu.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { EnvConfig } from './shared/enums/EnvConfig.enum';
 @Module({
@@ -26,6 +27,7 @@ import { EnvConfig } from './shared/enums/EnvConfig.enum';
             inject: [ConfigService]
         }),
         AuthModule,
+        AdminMenuModule,
         ConfigModule.forRoot()
     ],
     controllers: [AppController],

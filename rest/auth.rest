@@ -1,0 +1,20 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjk3NzI3NDQzLCJleHAiOjE2OTc3MjgzNDN9.7C5AqjdiWXqgRgq6yUcAIHFfA8KaDq1na2z9tzE8aeI
+@baseurl = http://localhost:3000
+
+############
+POST {{baseurl}}/auth/login
+Content-Type: application/json
+
+{
+	"login": "admin",
+	"password": "Password1!"
+}
+
+############
+GET {{baseurl}}/auth/profile
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+############
+GET {{baseurl}}/menu
+Authorization: Bearer {{token}}
